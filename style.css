@@ -1,0 +1,68 @@
+body{
+    background-color: gray;
+}
+
+main{
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas: 
+        "h h"
+        "a n"
+        "f f";
+}
+
+header{
+    grid-area: h;
+}
+
+article{
+    grid-area: a;
+    /* view height */
+    height: 40vh;
+}
+
+nav{
+    grid-area: n;
+}
+
+footer{
+    grid-area: f;
+}
+
+header, article, nav, footer {
+    background-color: rgb(194, 93, 93);
+    padding: 1em;
+}
+
+header, footer {
+    text-align: center;
+}
+
+/* reszponzivitás beállítása csökkenő sorrendben legyenek a töréspontok*/
+
+@media all and (max-width: 1200px){
+    /* csak a változást írjátok! */
+    main{
+        grid-template-columns: 2fr 1fr;
+    }
+
+    header, article, nav, footer {
+        background-color: rgb(112, 45, 45);
+    }
+}
+
+@media all and (max-width: 600px){
+    main{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "h"
+        "n"
+        "a"
+        "f";
+    }
+
+    header, article, nav, footer {
+        background-color: rgb(88, 23, 23);
+    }
+}
