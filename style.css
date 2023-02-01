@@ -1,8 +1,13 @@
+*{
+    box-sizing: border-box;
+}
 body{
     background-color: gray;
 }
 
 main{
+    width: 70%; 
+    margin: 0 auto;  
     display: grid;
     gap: 1.2rem;
     grid-template-columns: 4fr 1fr;
@@ -18,8 +23,8 @@ header{
 
 article{
     grid-area: a;
-    /* view height */
-    height: 40vh;
+    /* view height képernyő mag-nak az 50%-a*/
+    height: 50vh;
 }
 
 nav{
@@ -39,6 +44,34 @@ header, footer {
     text-align: center;
 }
 
+fieldset{
+    border:rgb(255, 255, 255) 2px solid;
+    margin: 15px;
+    padding: 15px; 
+}
+
+legend{
+    width: 20%;
+    text-align: right;
+    background-color: beige;
+    color: rgb(88, 23, 23);
+    border-radius: 5px;
+    padding: 2px 30px; 
+}
+
+label{
+    width: 20%;
+    float: left;
+    margin-right: 20px;
+}
+
+input, label{
+    margin-top: 20px;
+}
+
+input{
+    padding: 5px;
+}
 /* reszponzivitás beállítása csökkenő sorrendben legyenek a töréspontok*/
 
 @media all and (max-width: 1200px){
@@ -50,10 +83,20 @@ header, footer {
     header, article, nav, footer {
         background-color: rgb(112, 45, 45);
     }
+
+    legend{
+        width: 50%;
+        text-align: center;
+    }
+
+    article{
+        height: auto;
+    }
 }
 
 @media all and (max-width: 600px){
     main{
+        width: 100%;
         grid-template-columns: 1fr;
         grid-template-areas: 
         "h"
